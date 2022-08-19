@@ -1,14 +1,12 @@
 import fetch from "node-fetch";
-class PlanetTerp {
-  constructor() {
-    let link = "https://planetterp.com/api/v1";
+let link = "https://planetterp.com/api/v1";
 
     const encodeGetParams = (p) =>
       Object.entries(p)
         .map((kv) => kv.map(encodeURIComponent).join("="))
         .join("&");
 
-    async function getCourse(name, reviews) {
+    export async function getCourse(name, reviews) {
       if (reviews == undefined) {
         reviews = false;
       }
@@ -23,7 +21,7 @@ class PlanetTerp {
       );
     }
 
-    async function getCourses(department, reviews, limit, offset) {
+    export async function getCourses(department, reviews, limit, offset) {
       if (reviews == undefined) {
         reviews = false;
       }
@@ -48,7 +46,7 @@ class PlanetTerp {
       );
     }
 
-    async function getProfessor(name, reviews) {
+    export async function getProfessor(name, reviews) {
       if (reviews == undefined) {
         reviews = false;
       }
@@ -63,7 +61,7 @@ class PlanetTerp {
       );
     }
 
-    async function getProfessors(type, reviews, limit, offset) {
+    export async function getProfessors(type, reviews, limit, offset) {
       if (reviews == undefined) {
         reviews = false;
       }
@@ -96,27 +94,27 @@ class PlanetTerp {
       );
     }
 
-    async function getGradesByCourse(course, semester, section) {
-        var params = {
-            course: course,
-            semester: semester,
-            section: section
-        }
+   export async function getGradesByCourse(course, semester, section) {
+     var params = {
+       course: course,
+       semester: semester,
+       section: section,
+     };
 
-        if (semester == "all") {
-            delete params['semester']
-        }
-        
-        if (section == "all") {
-          delete params['section'];
-        }
+     if (semester == "all") {
+       delete params["semester"];
+     }
 
-        return await fetch(
-          `${link}/grades?` + encodeGetParams(params)
-        ).then((res) => res.json());
-    }
+     if (section == "all") {
+       delete params["section"];
+     }
 
-    async function getGradesByProfessor(professor, semester, section) {
+     return await fetch(`${link}/grades?` + encodeGetParams(params)).then(
+       (res) => res.json()
+     );
+   }
+
+    export async function getGradesByProfessor(professor, semester, section) {
       var params = {
         professor: professor,
         semester: semester,
@@ -124,11 +122,11 @@ class PlanetTerp {
       };
 
       if (semester == "all") {
-        delete params['semester'];
+        delete params["semester"];
       }
 
       if (section == "all") {
-        delete params['section'];
+        delete params["section"];
       }
 
       return await fetch(`${link}/grades?` + encodeGetParams(params)).then(
@@ -156,8 +154,3 @@ class PlanetTerp {
         (res) => res.json()
       );
     }
-
-  }
-}
-
-export default new PlanetTerp();
