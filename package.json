@@ -6,10 +6,19 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "tahuja",
+  "author": "tahuja3482",
   "license": "ISC",
   "type": "module",
   "dependencies": {
     "node-fetch": "^3.2.10"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tahuja3482/PlanetTerp-JavaScript-API-Wrapper.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tahuja3482/PlanetTerp-JavaScript-API-Wrapper/issues"
+  },
+  "homepage": "https://github.com/tahuja3482/PlanetTerp-JavaScript-API-Wrapper#readme"
 }

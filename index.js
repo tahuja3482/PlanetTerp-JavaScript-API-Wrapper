@@ -159,3 +159,5 @@ class PlanetTerp {
 
   }
 }
+
+export default new PlanetTerp();
