@@ -1,0 +1,15 @@
+{
+  "name": "planetterp",
+  "version": "1.0.0",
+  "description": "A JavaScript API Wrapper for PlanetTerp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "tahuja",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "node-fetch": "^3.2.10"
+  }
+}
